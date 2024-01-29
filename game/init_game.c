@@ -6,7 +6,7 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 16:05:23 by vnaslund          #+#    #+#             */
-/*   Updated: 2024/01/22 13:22:34 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/29 16:51:18 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	init_window(t_game *game)
 	game->image = mlx_new_image(game->mlx, WIN_WIDTH, WIN_HEIGHT);
 	mlx_image_to_window(game->mlx, game->image, 0, 0);
 	raycast(game);
+	init_mini_map(game);
 	mlx_key_hook(game->mlx, key_hook, game);
 	mlx_loop_hook(game->mlx, loop_hook, game);
 	mlx_loop(game->mlx);

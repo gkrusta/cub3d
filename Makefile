@@ -6,7 +6,7 @@
 #    By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:46:17 by vnaslund          #+#    #+#              #
-#    Updated: 2024/01/24 16:14:22 by gkrusta          ###   ########.fr        #
+#    Updated: 2024/01/29 16:12:23 by gkrusta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS    = main.c parsing/read_file.c parsing/playable.c parsing/file_check.c \
 		  game/raycasting/draw.c  game/raycasting/raycast.c \
 		  game/raycasting/angles.c game/raycasting/raycasting_utils.c \
 		  game/raycasting/raycasting_each_pixel.c \
+		  mini_map_bonus/mini_map_bonus.c
 
 BSRCS	= main.c parsing/read_file.c parsing/playable.c parsing/file_check.c \
           parsing/fill_map.c parsing/explore.c exit_handler.c \

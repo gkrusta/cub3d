@@ -6,46 +6,98 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:11:53 by gkrusta           #+#    #+#             */
-/*   Updated: 2024/01/29 17:56:23 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/30 12:51:32 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	draw_map(t_game *game, char **map)
+t_pos	get_maps_size()
 {
-	int	tile;
-	int	i;
-	int	j;
-	//tile = game->data;
-	j = 0;
+	t_pos	players_field;
+
+	players_field.x = modf(x, &players_field.x);
+	players_field.y = modf(y, &players_field.y);
+	
+}
+
+void	fill_cell(t_game *game, int x, int y, int color)
+{
+	int		tile_start_x;
+	int		tile_start_y;
+
+	if (color == MAP_PLAYER_COLOR)
+		fill_players_cell(x, y);
+	tile_start_x = x * 20;
+	while (tile_start_x < tile_start_x + 20)
+	{
+		tile_start_x++;
+		tile_start_y = y * 20;
+		while (tile_start_y < tile_start_y + 20)
+		{
+			mlx_put_pixel(game->mini_map, x, y, color);
+			tile_start_y++;
+		}
+	}
+}
+
+void	draw_map(t_game *game, char **map, int *i, int *j)
+{
+	int	color;
+	int	tmp_j;
+
 	while (map[i])
 	{
-		i = 0;
-		while (map[j])
+		tmp_j = j;
+		while (j < game->data->max_cols && map[i][j])
 		{
-			if (map[i][j] == EMPTY)
-				// paint floor
-			else if (map[i][j] == WALL)
-				// paint wall
-			else if (ft_strchr(map[i][j], ))
-				// player
-			j++;
+			if (map[i][j] == WALL)
+				color = MAP_WALL_COLOR;
+			else if (map[i][j] == 'N' || map[i][j] == 'S' ||
+				map[i][j] == 'W' || map[i][j] == 'E')
+				color = MAP_PLAYER_COLOR;
+			else
+				color = MAP_EMPTY_COLOR;
+			fill_cell(game, game->player->y, game->player->x, color);
+			tmp_j++;
 		}
 		i++;
 	}
 }
 
+void	iterate_map(t_game *game, int *x, int *y)
+{
+	if (y < 0)
+	{
+		
+		iterate_map(game, x, y + 1);
+	}
+	else if (x < 0)
+	{
+		
+		iterate_map(game, x + 1, y);
+	}
+	else if (y > game->data->max_cols)
+	{
+		
+		iterate_map(game, x, y + 1);
+	}
+	else if (x > game->data->rows)
+	{
+		*
+		iterate_map(game, x, y + 1);
+	}
+}
+
 void	init_mini_map(t_game *game)
 {
-	game->mlx = mlx_init(200, 200, "cub3d_bonus", true);
-	if (!game->mlx)
-		exit_handler("mlx_init error", game);
-	game->mini_map = mlx_new_image(game->mlx, 200, 200);
+	t_pos	map_start;
+
+	map_start.x = (int)(game->player->x - 5.0);
+	map_start.y = (int)(game->player->y - 5.0);
+	iterate_map(game, &map_start.x, &map_start.y);
+	game->mini_map = mlx_new_image(game->mlx, 198, 198);
 	mlx_image_to_window(game->mlx, game->mini_map, 0, 0);
-	raycast(game);
-	mlx_key_hook(game->mlx, key_hook, game);
-	mlx_loop_hook(game->mlx, loop_hook, game);
-	mlx_loop(game->mlx);
-	mlx_terminate(game->mlx);
+	draw_map(game, game->data->map, map_start.y, map_start.x);
+	
 }

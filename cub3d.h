@@ -6,7 +6,7 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 14:45:39 by vnaslund          #+#    #+#             */
-/*   Updated: 2024/01/29 17:48:17 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/30 09:23:03 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@
 # define MOVE_SPEED 0.1
 # define ROTATION_SPEED 0.1
 # define COLLISION_MARGIN 0.1
+
+# define MAP_BACKGROUND_COLOR 0x404040 // Dark gray
+# define MAP_PLAYER_COLOR 0xFF0000     // Red (for player position)
+# define MAP_WALL_COLOR 0xFFFFFF       // White (for walls)
+# define MAP_EMPTY_COLOR 0x000000      // Black (for empty space)
 
 typedef struct s_data		t_data;
 typedef struct s_textures	t_textures;

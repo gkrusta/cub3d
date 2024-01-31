@@ -6,7 +6,7 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 15:53:53 by vnaslund          #+#    #+#             */
-/*   Updated: 2024/01/31 13:59:50 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 14:03:59 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,4 @@ void	raycast(t_game *game)
 		game->pixel_info = NULL;
 		x++;
 	}
-	init_mini_map(game);
 }

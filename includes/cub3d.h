@@ -6,15 +6,15 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 14:45:39 by vnaslund          #+#    #+#             */
-/*   Updated: 2024/01/31 13:25:55 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 15:25:59 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "libft/libft.h"
-# include "MLX42/include/MLX42/MLX42.h"
+# include "../libft/libft.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <stdbool.h>
 # include <fcntl.h>
 # include <math.h>

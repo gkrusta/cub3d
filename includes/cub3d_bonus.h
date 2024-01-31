@@ -6,15 +6,15 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:25:01 by gkrusta           #+#    #+#             */
-/*   Updated: 2024/01/31 13:25:57 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 17:48:08 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_BONUS_H
 # define CUB3D_BONUS_H
 
-# include "libft/libft.h"
-# include "MLX42/include/MLX42/MLX42.h"
+# include "../libft/libft.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <stdbool.h>
 # include <fcntl.h>
 # include <math.h>
@@ -201,9 +201,9 @@ int				get_texture_pixel_color(mlx_texture_t *texture, int y, int x);
 int				get_rgba(int r, int g, int b, int a);
 
 // mini map
-void	init_mini_map(t_game *game);
-void	iterate_map(t_game *game, t_pos *map_start);
-int		get_color(t_game *game, int i, int j);
-bool	check_coordinate(t_game *game, t_pos *pixel_pos);
+void			init_mini_map(t_game *game);
+void			iterate_map(t_game *game, t_pos *map_start);
+int				get_color(t_game *game, int i, int j);
+bool			check_coordinate(t_game *game, t_pos *pixel_pos);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:46:17 by vnaslund          #+#    #+#              #
-#    Updated: 2024/01/31 13:43:54 by gkrusta          ###   ########.fr        #
+#    Updated: 2024/01/31 17:34:26 by gkrusta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,20 +24,20 @@ HEADERS = -I ./includes -I ${LIBMLX}/include -I ${LIBFT}
 LIBGL   = -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib"
 LIBS    = ${LIBGL} $(LIBFT_A) ${LIBMLX}/build/libmlx42.a
 
-SRCS    = main.c parsing/read_file.c parsing/playable.c parsing/file_check.c \
+SRCS    = game/main.c parsing/read_file.c parsing/playable.c parsing/file_check.c \
           parsing/fill_map.c parsing/explore.c \
 		  game/init_game.c game/hooks.c game/move.c game/rotate.c \
-		  game/raycasting/draw.c game/raycasting/raycast.c \
-		  game/raycasting/angles.c game/raycasting/raycasting_utils.c \
-		  game/raycasting/raycasting_each_pixel.c game/exit_handler.c \
-
-BSRCS	= main.c parsing/read_file.c parsing/playable.c parsing/file_check.c \
-          parsing/fill_map.c parsing/explore.c \
-		  game/init_game.c game/hooks.c game/move_bonus.c game/rotate.c \
 		  game/raycasting/draw.c  game/raycasting/raycast.c \
 		  game/raycasting/angles.c game/raycasting/raycasting_utils.c \
-		  game/raycasting/raycasting_each_pixel.c \
-		  mini_map_bonus/mini_map_bonus.c game/exit_handler.c \
+		  game/raycasting/raycasting_each_pixel.c game/exit_handler.c 
+
+BSRCS	= game_bonus/main.c parsing_bonus/read_file_bonus.c parsing_bonus/playable_bonus.c parsing_bonus/file_check_bonus.c \
+          parsing_bonus/fill_map_bonus.c parsing_bonus/explore_bonus.c \
+		  game_bonus/init_game_bonus.c game_bonus/hooks_bonus.c game_bonus/move_bonus.c game_bonus/rotate_bonus.c \
+		  game_bonus/raycasting_bonus/draw_bonus.c game_bonus/raycasting_bonus/raycast_bonus.c \
+		  game_bonus/raycasting_bonus/angles_bonus.c game_bonus/raycasting_bonus/raycasting_utils_bonus.c \
+		  game_bonus/raycasting_bonus/raycasting_each_pixel_bonus.c \
+		  game_bonus/mini_map_bonus/mini_map_bonus.c game_bonus/exit_handler_bonus.c 
 
 OBJ_DIR = obj/
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)%.o)
@@ -73,7 +73,7 @@ $(NAME): $(OBJS)
 
 $(BONUS): $(BOBJS)
 	@echo "Linking $@..."
-	@$(CC) $(BOBJS) $(LIBS) $(HEADERS) -o $(BONUS)
+	@$(CC) $(CFLAGS) $(BOBJS) $(LIBS) $(HEADERS) -o $(BONUS)
 	@echo "$@ compilation complete."
 
 clean:

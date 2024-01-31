@@ -6,7 +6,7 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 16:11:53 by gkrusta           #+#    #+#             */
-/*   Updated: 2024/01/31 14:01:06 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 17:47:40 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ int	get_color(t_game *game, int i, int j)
 	if (mini_map[i][j] == WALL)
 		color = MAP_WALL_COLOR;
 	else if (mini_map[i][j] == 'N' || mini_map[i][j] == 'S' ||
-		mini_map[i][j] == 'W' || mini_map[i][j] == 'E' || mini_map[i][j] == EMPTY)
-			color = MAP_BACKGROUND_COLOR;
+		mini_map[i][j] == 'W' || mini_map[i][j] == 'E' ||
+			mini_map[i][j] == EMPTY)
+		color = MAP_BACKGROUND_COLOR;
 	else
 		color = MAP_EMPTY_COLOR;
 	return (color);
@@ -47,7 +48,7 @@ void	iterate_map(t_game *game, t_pos *map_start)
 {
 	int		i;
 	int		j;
-	int			color;
+	int		color;
 	t_pos	pixel_pos;
 
 	i = 0;
@@ -62,7 +63,6 @@ void	iterate_map(t_game *game, t_pos *map_start)
 			{
 				color = get_color(game, pixel_pos.y, pixel_pos.x);
 				mlx_put_pixel(game->image, i, j, color);
-				
 			}
 			else
 				mlx_put_pixel(game->image, i, j, MAP_EMPTY_COLOR);

@@ -6,11 +6,11 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:56:50 by gkrusta           #+#    #+#             */
-/*   Updated: 2024/01/30 10:11:33 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 13:59:46 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "cub3d.h"
 
 t_pos	get_first_step(t_player *player, t_ray *ray, double angle,
 						char crossing)

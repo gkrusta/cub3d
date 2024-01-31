@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/10 14:45:39 by vnaslund          #+#    #+#             */
-/*   Updated: 2024/01/30 09:23:03 by gkrusta          ###   ########.fr       */
+/*   Created: 2024/01/31 13:25:01 by gkrusta           #+#    #+#             */
+/*   Updated: 2024/01/31 13:25:57 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
 # include "libft/libft.h"
 # include "MLX42/include/MLX42/MLX42.h"
@@ -32,10 +32,11 @@
 # define ROTATION_SPEED 0.1
 # define COLLISION_MARGIN 0.1
 
-# define MAP_BACKGROUND_COLOR 0x404040 // Dark gray
-# define MAP_PLAYER_COLOR 0xFF0000     // Red (for player position)
-# define MAP_WALL_COLOR 0xFFFFFF       // White (for walls)
-# define MAP_EMPTY_COLOR 0x000000      // Black (for empty space)
+# define MAP_BACKGROUND_COLOR 0x808080
+# define MAP_PLAYER_COLOR -0xFFFF01
+# define MAP_WALL_COLOR 0xFFFFFF
+# define MAP_EMPTY_COLOR 0xFF
+# define TILE_SIZE 20
 
 typedef struct s_data		t_data;
 typedef struct s_textures	t_textures;
@@ -49,7 +50,6 @@ typedef struct s_game
 	mlx_t		*mlx;
 	t_player	*player;
 	mlx_image_t	*image;
-	mlx_image_t	*mini_map;
 	t_textures	*textures;
 	t_data		*data;
 	t_ray		*ray;
@@ -199,5 +199,11 @@ void			determine_quadrant(t_ray *ray);
 void			calc_wall_and_draw(t_game *game, int x);
 int				get_texture_pixel_color(mlx_texture_t *texture, int y, int x);
 int				get_rgba(int r, int g, int b, int a);
+
+// mini map
+void	init_mini_map(t_game *game);
+void	iterate_map(t_game *game, t_pos *map_start);
+int		get_color(t_game *game, int i, int j);
+bool	check_coordinate(t_game *game, t_pos *pixel_pos);
 
 #endif

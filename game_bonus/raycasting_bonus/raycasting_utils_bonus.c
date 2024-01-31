@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycasting_utils.c                                 :+:      :+:    :+:   */
+/*   raycasting_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:26:55 by gkrusta           #+#    #+#             */
-/*   Updated: 2024/01/24 16:31:20 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 14:02:19 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "cub3d_bonus.h"
 
 double	get_fractional_part(t_pos *hit_point)
 {
@@ -19,7 +19,7 @@ double	get_fractional_part(t_pos *hit_point)
 
 	x_fractional = modf(hit_point->x, &x_fractional);
 	y_fractional = modf(hit_point->y, &y_fractional);
-	if (y_fractional == (int)hit_point->y)
+	if (y_fractional == 0)
 		return (x_fractional);
 	else
 		return (y_fractional);
@@ -86,7 +86,6 @@ bool	wall_check(t_data *data, t_ray *ray, t_pos step, char crossing)
 		return (true);
 	if (abs(i + 1) > data->max_cols || i < 0)
 		return (true);
-	printf("from crossing %c:\ni: %d and j: %d\n", crossing, i, j);
 	if (map[j][i] == WALL)
 		return (true);
 	return (false);

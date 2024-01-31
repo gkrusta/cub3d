@@ -6,11 +6,11 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:00:32 by vnaslund          #+#    #+#             */
-/*   Updated: 2024/01/31 14:00:31 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 14:01:25 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 void	init_explore(t_game *game, int ***visited)
 {

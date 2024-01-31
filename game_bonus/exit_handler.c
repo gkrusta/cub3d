@@ -6,11 +6,11 @@
 /*   By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 14:34:22 by vnaslund          #+#    #+#             */
-/*   Updated: 2024/01/22 17:42:38 by gkrusta          ###   ########.fr       */
+/*   Updated: 2024/01/31 14:01:44 by gkrusta          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "cub3d_bonus.h"
 
 void	ft_end_game(t_game *game)
 {

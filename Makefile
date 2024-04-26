@@ -6,7 +6,7 @@
 #    By: gkrusta <gkrusta@student.42malaga.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 16:46:17 by vnaslund          #+#    #+#              #
-#    Updated: 2024/01/31 17:34:26 by gkrusta          ###   ########.fr        #
+#    Updated: 2024/04/26 11:54:36 by gkrusta          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ BSRCS	= game_bonus/main.c parsing_bonus/read_file_bonus.c parsing_bonus/playable
 		  game_bonus/raycasting_bonus/draw_bonus.c game_bonus/raycasting_bonus/raycast_bonus.c \
 		  game_bonus/raycasting_bonus/angles_bonus.c game_bonus/raycasting_bonus/raycasting_utils_bonus.c \
 		  game_bonus/raycasting_bonus/raycasting_each_pixel_bonus.c \
-		  game_bonus/mini_map_bonus/mini_map_bonus.c game_bonus/exit_handler_bonus.c 
+		  game_bonus/mini_map_bonus.c game_bonus/exit_handler_bonus.c 
 
 OBJ_DIR = obj/
 OBJS    = $(SRCS:%.c=$(OBJ_DIR)%.o)

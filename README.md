@@ -1,6 +1,7 @@
 # cub3D
 
-- This project is inspired by the classic game Wolfenstein 3D, which is considered to be the first true FPS in gaming history.
+> This project is inspired by the classic game Wolfenstein 3D, which is considered to be the first true FPS in gaming history.
+
 - `cub3D` offers a modern twist on this classic, utilizing raycasting technology to create a dynamic 3D labyrinth exploration experience.
 
 <div align="center">

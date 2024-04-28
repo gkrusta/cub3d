@@ -50,13 +50,13 @@ git clone https://github.com/gkrusta/cub3d cub3d
 Run `make` to build the standard version or `make bonus` for the version with bonus features.
 
 ```bash
-cd webserv/webserver && make
+cd cub3d && make
 ```
 
 3. **Run the Game**:
 
 ```bash
-./cub3d map.cub
+./cub3d map.cub or /cub3d_bonus map.cub
 ```
 
 ### My Teammate => [Victor](https://github.com/vnaslund-19)
